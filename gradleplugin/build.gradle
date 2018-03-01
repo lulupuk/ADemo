@@ -1,0 +1,30 @@
+apply plugin: "groovy"
+apply plugin: "maven"
+
+dependencies{
+    compile gradleApi()
+    compile localGroovy()
+}
+
+repositories{
+    jcenter()
+}
+
+group = 'com.ym.gradle.plugin'
+version = '2.0.0'
+
+/*
+uploadArchives{
+    repositories{
+        mavenDeployer{
+            repository(url:uri('../repo'))
+            pom.groupId = 'com.ym.gradle.plugin'
+            pom.artifactId = 'test'
+            pom.version = '2.0.0'
+        }
+    }
+}
+*/
+
+//应用插件
+apply from: '../bintray.gradle'
